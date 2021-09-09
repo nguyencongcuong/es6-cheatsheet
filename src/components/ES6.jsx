@@ -1,12 +1,12 @@
 import React from 'react'
 import ES6Links from "../ES6"
-import CodeBlock from './CodeBlock'
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import MarkdownParser from './MarkdownParser'
 
 function ES6() {
   
   const CodeBlockList = ES6Links.map((a, i) => 
-    <CodeBlock link={a} key={i} />
+    <MarkdownParser link={a} key={i} />
   )
 
   return (

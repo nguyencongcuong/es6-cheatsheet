@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import marked from "marked"
+import hljs from 'highlight.js'
 
 function MarkdownParser(props) {
-
+	
+	const [text, setText] = useState("")
+	
 	marked.setOptions({
 		pedantic: false,
 		gfm: true,
@@ -11,14 +14,25 @@ function MarkdownParser(props) {
 		smarttexts: true,
 	});
 
+	hljs.initHighlightingOnLoad()
+  
+  fetch(props.link)
+    .then(res => res.text())
+    .then(text => {
+      setText(text)
+    })
+
 	const markdown = () => {
 		return {
-			__html: marked(props.source)
+			__html: marked(text)
 		}
 	}
 
   return (
-    <section dangerouslySetInnerHTML={markdown()} />
+    <section
+			className="code-block bg-gray-200 rounded-md overflow-hidden" 
+			dangerouslySetInnerHTML={markdown()} 
+		/>
   )
 	
 }
