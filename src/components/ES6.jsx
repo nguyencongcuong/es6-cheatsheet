@@ -21,7 +21,7 @@ function ES6() {
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 640: 1, 1024: 2 }}
       >
-      <Masonry gutter="2rem" className="p-8">
+      <Masonry gutter="2rem" className="p-4 lg:p-8">
         {CodeBlockList}
       </Masonry>
       </ResponsiveMasonry>
