@@ -11,11 +11,12 @@ function CodeBlock(props) {
     .then(res => res.text())
     .then(text => {
       setText(text)
-      console.log(text);
     })
    
   return (
-    <MarkdownParser source={text} />
+    <div className="code-block bg-gray-200 rounded-md overflow-hidden">
+      <MarkdownParser source={text} />
+    </div>
   )
 }
 

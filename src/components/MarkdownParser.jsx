@@ -2,6 +2,7 @@ import React from 'react'
 import marked from "marked"
 
 function MarkdownParser(props) {
+
 	marked.setOptions({
 		pedantic: false,
 		gfm: true,
@@ -9,14 +10,17 @@ function MarkdownParser(props) {
 		sanitize: false,
 		smarttexts: true,
 	});
+
 	const markdown = () => {
 		return {
 			__html: marked(props.source)
 		}
-	}    
+	}
+
   return (
-    <section className="mb-8" dangerouslySetInnerHTML={markdown()} />
+    <section dangerouslySetInnerHTML={markdown()} />
   )
+	
 }
 
 export default MarkdownParser
