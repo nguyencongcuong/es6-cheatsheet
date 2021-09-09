@@ -1,0 +1,12 @@
+@tailwind base;
+
+@layer base {
+  h1 { @apply text-6xl font-bold mb-8; }
+  h2 { @apply text-xl font-bold mb-8; }
+  pre { @apply rounded-md; }
+  pre code { @apply rounded-md; }
+}
+
+@tailwind components;
+@tailwind utilities;
+
