@@ -1,6 +1,7 @@
 {
-  "name": "react-template-starter",
-  "version": "0.1.0",
+  "name": "es6-cheatsheet",
+  "homepage": "https://nguyencongcuong.github.io/es6-cheatsheet",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.2.0",
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^3.2.3",
     "highlight.js": "^11.2.0",
     "marked": "^3.0.3",
     "netlify-cli": "^6.8.10",
@@ -36,7 +38,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
